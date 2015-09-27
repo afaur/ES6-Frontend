@@ -30,7 +30,9 @@ function getBundler() {
 
 function bundle() {
   return getBundler()
-    .transform(babelify)
+    .transform(babelify.configure({
+      optional: ["es7.asyncFunctions"]
+    }))
     .bundle()
     .on('error', function(err) { console.log('Error: ' + err.message); })
     .pipe(source(config.outputFile))

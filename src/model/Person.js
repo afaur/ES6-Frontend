@@ -1,11 +1,19 @@
 class Person {
-    constructor(firstName, lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+  constructor(first, last) {
+      this.first = first;
+      this.last = last;
+  }
 
-    get fullName() {
-        return this.firstName + ' ' + this.lastName;
-    }
+  get firstName() {
+      return this.first.titleize();
+  }
+
+  get lastName() {
+      return this.last.titleize();
+  }
+
+  get fullName() {
+      return this.firstName + ' ' + this.lastName;
+  }
 }
 export {Person}
